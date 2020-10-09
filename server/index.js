@@ -31,9 +31,8 @@ cron.schedule('5 * * * * *', function() {
 
 
 app.get("/api/get", (req, res) => {           // aca hacer esta funcion con select top 10
-     const sqlGetTopTen = "SELECT * FROM Players LIMIT 10"; 
      const sqlGetTopTen2 =  `
-     SELECT p.nickname, p.profile_image, s.value 
+     SELECT p.nickname, p.profile_image, s.value, s.timestamp 
          FROM Players as p 
          INNER JOIN player_has_score as ps ON ps.player_id = p.id 
          INNER JOIN Scores as s ON s.id = ps.score_id 
