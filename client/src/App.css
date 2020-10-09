@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+a:link, a:visited {
+  background-color:green;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: rgb(46, 156, 46);
+}
+
+div {
+  font-size: 25px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.score {
+  color: red;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
