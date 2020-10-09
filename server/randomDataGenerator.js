@@ -19,7 +19,6 @@ function getNumberBetween(min, max) {
 async function getRandomNickname(){
     return await axios.get('https://randomuser.me/api')
     .then(response => {
-        //console.log(response.data.results[0].login.username);
         return response.data.results[0].login.username;
     })
     .catch(error => {
@@ -30,7 +29,6 @@ async function getRandomNickname(){
 async function getRandomProfileImage(){
     return await axios.get('https://randomuser.me/api')
     .then(response => {
-       // console.log(response.data.results[0].picture.thumbnail);
         return response.data.results[0].picture.thumbnail;
     })
     .catch(error => {
@@ -75,8 +73,7 @@ async function generateScoreForPlayer() {
     
     const scoreId = await insertInScores(value, timestamp);
     const playerId = await insertInPlayers(nickname, profileImage);
-    console.log(playerId);
-    console.log(scoreId);
+
     
     const sqlInsertPxS = 'INSERT INTO player_has_score(player_id,score_id) VALUES (?,?);'
     db.query(sqlInsertPxS, [playerId, scoreId], function (error, results, fields) {

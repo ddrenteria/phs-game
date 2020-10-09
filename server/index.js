@@ -29,8 +29,8 @@ cron.schedule('5 * * * * *', function() {
 });
 
 
-
-app.get("/api/get", (req, res) => {           // aca hacer esta funcion con select top 10
+// query to get top 10 by score
+app.get("/api/get", (req, res) => {           
      const sqlGetTopTen2 =  `
      SELECT p.nickname, p.profile_image, s.value, s.timestamp 
          FROM Players as p 
